@@ -19,16 +19,16 @@ def spiral_traversal(matrix):
             print(matrix[i][right], end = " ")
         
         right -= 1
-        
-        for j in range(right, left-1, -1):
-            print (matrix[bottom][j], end = " ")
-        
-        bottom -= 1
-        
-        for i in range(bottom, top-1, -1):
-            print (matrix[i][left], end = " ")
-        
-        left += 1
+
+        if top <= bottom:  # guard before bottom row
+            for j in range(right, left-1, -1):
+                print(matrix[bottom][j], end=" ")
+            bottom -= 1
+
+        if left <= right:  # guard before left col
+            for i in range(bottom, top-1, -1):
+                print(matrix[i][left], end=" ")
+            left += 1
         
 matrix = [
     [1,  2,  3,  4],
