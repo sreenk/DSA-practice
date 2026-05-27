@@ -5,6 +5,16 @@ def boundary_traversal(matrix):
     row_len = len(matrix)
     col_len = len(matrix[0])
     
+    if row_len == 1 and col_len > 1:
+        for j in range(col_len):
+            print(matrix[0][j], end = " ")
+        return
+    
+    elif row_len > 1 and col_len == 1:
+        for i in range(row_len):
+            print(matrix[i][0], end = " ")
+        return
+    
     for j in range(col_len):
         print(matrix[0][j], end = " ")
     
@@ -18,9 +28,6 @@ def boundary_traversal(matrix):
         print(matrix[i][0], end = " ")
     
 matrix = [
-    [1,  2,  3,  4],
-    [5,  6,  7,  8],
-    [9,  10, 11, 12],
-    [13, 14, 15, 16]
+    [1],  [2],  [3],  [4]
 ]
 boundary_traversal(matrix)
