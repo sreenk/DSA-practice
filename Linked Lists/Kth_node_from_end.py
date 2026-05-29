@@ -1,8 +1,8 @@
-def kth_node_from_end(self, k):
-        if not self.head:
+def kth_node_from_end(head, k):
+        if not head:
             return None
             
-        slow = fast = self.head 
+        slow = fast = head 
         for i in range(k):
             if not fast:
                 return None
